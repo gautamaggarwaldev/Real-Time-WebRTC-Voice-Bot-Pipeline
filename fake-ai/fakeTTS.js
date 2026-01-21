@@ -2,7 +2,7 @@ class FakeTTS {
 
   constructor() {
     this.sampleRate = 16000;
-    this.frameSize = 160; // 10ms frame (required by wrtc)
+    this.frameSize = 160; 
     this.frequency = 440;
   }
 
@@ -36,7 +36,7 @@ class FakeTTS {
       await new Promise(r => setTimeout(r, 10));
     }
 
-    console.log("✅ Fake TTS finished streaming");
+    console.log("Fake TTS finished streaming");
   }
 }
 

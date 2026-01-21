@@ -8,10 +8,10 @@ class FakeSTT {
     this.speechStartTime = null;
     this.lastVoiceTime = null;
 
-    this.threshold = 2000; // amplitude threshold
+    this.threshold = 2000;
     this.partialSent = false;
 
-    this.silenceTimeout = 600; // ms
+    this.silenceTimeout = 600;
   }
 
   processAudioFrame(pcmBuffer) {
@@ -35,7 +35,7 @@ class FakeSTT {
         this.speechStartTime = now;
         this.partialSent = false;
 
-        // 🔥 Voice started callback (for barge-in)
+        //Voice started callback (for barge-in)
         if (this.onVoiceStart) {
           this.onVoiceStart();
         }

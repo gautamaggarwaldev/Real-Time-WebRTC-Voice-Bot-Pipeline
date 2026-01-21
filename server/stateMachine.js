@@ -13,7 +13,7 @@ class StateMachine {
   }
 
   setState(newState) {
-    console.log(`🔁 STATE: ${this.state} → ${newState}`);
+    console.log(`STATE: ${this.state} → ${newState}`);
     this.state = newState;
   }
 

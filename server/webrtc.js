@@ -13,15 +13,12 @@ function createPeer() {
   const stateMachine = new StateMachine();
   stateMachine.setState(STATES.LISTENING);
 
-  // Create outbound audio track
   const audioSource = new wrtc.nonstandard.RTCAudioSource();
   const audioTrack = audioSource.createTrack();
 
-  // 🔑 CREATE MEDIA STREAM
   const mediaStream = new wrtc.MediaStream();
   mediaStream.addTrack(audioTrack);
 
-  // 🔑 ADD TRACK WITH STREAM
   pc.addTrack(audioTrack, mediaStream);
 
   const fakeTTS = new FakeTTS();
@@ -48,7 +45,6 @@ function createPeer() {
       // Start TTS
       stateMachine.setState(STATES.SPEAKING);
 
-      // ✅ Stop previous TTS if still running
       if (ttsAbortController) {
         ttsAbortController.abort();
       }
@@ -85,7 +81,6 @@ function createPeer() {
       }
     },
 
-    // 🔥 VOICE START HANDLER (BARGE-IN)
     () => {
       if (stateMachine.getState() === STATES.SPEAKING) {
         console.log("🚨 BARGE-IN DETECTED");

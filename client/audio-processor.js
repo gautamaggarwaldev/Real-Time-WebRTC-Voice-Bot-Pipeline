@@ -27,12 +27,10 @@ class PCMProcessor extends AudioWorkletProcessor {
 
       this.buffer.push(sample);
 
-      // When buffer reaches 320 samples
       if (this.buffer.length >= this.frameSize) {
 
         const frame = this.buffer.splice(0, this.frameSize);
 
-        // Float32 -> Int16 PCM
         const pcm16 = new Int16Array(this.frameSize);
 
         for (let j = 0; j < frame.length; j++) {
