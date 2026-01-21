@@ -1,18 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>WebRTC Voice Bot</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .container {
+      background: #020617;
+      padding: 25px 30px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    #startBtn {
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    #startBtn:hover {
+      background: #16a34a;
+    }
+
+    #stopBtn {
+      background: #ef4444;
+      color: #450a0a;
+    }
+
+    #stopBtn:hover {
+      background: #dc2626;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #38bdf8;
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      background: red;
+    }
+
+    .connected {
+      background: #22c55e;
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>WebRTC Voice Bot Test</h2>
+  <div class="container">
+    <h2>WebRTC Voice Bot</h2>
 
-<button id="startBtn">Start Call</button>
-<button id="stopBtn">Stop Call</button>
+    <button id="startBtn">Start Call</button>
+    <button id="stopBtn">Stop Call</button>
 
-<p id="status">Disconnected</p>
+    <p id="status">
+      <span id="dot" class="indicator"></span>
+      Disconnected
+    </p>
+  </div>
 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
