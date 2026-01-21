@@ -37,13 +37,13 @@ Browser Mic
 ## How To Run
 
 Install:
-
+`
 npm install
-
+`
 Start server:
-
+`
 node server/server.js
-
+`
 Open browser:
 
 http://localhost:3000
