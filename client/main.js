@@ -19,7 +19,8 @@ async function startCall() {
   socket = new WebSocket("ws://localhost:3000");
 
   socket.onopen = () => {
-    statusText.innerText = "Connected to signaling server";
+    statusText.innerText = "Connected";
+    document.getElementById("dot").classList.add("connected");
   };
 
   pc = new RTCPeerConnection();
@@ -114,4 +115,6 @@ function stopCall() {
   socket.close();
 
   statusText.innerText = "Call stopped";
+  document.getElementById("dot").classList.remove("connected");
+
 }
